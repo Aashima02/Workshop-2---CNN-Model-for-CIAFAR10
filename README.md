@@ -18,7 +18,7 @@ To develop a classification model for cifar10 data set using convolution neural 
 
 ## PROGRAM:
 
-### 1. Write a python code to load the CIFAR-10 dataset
+#### 1. Write a python code to load the CIFAR-10 dataset
 ```python
 import numpy as np
 from tensorflow import keras
@@ -34,7 +34,7 @@ from tensorflow.keras.preprocessing import image
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 ```
 
-### 2. Convert the output to one-hot encoded array
+#### 2. Convert the output to one-hot encoded array
 ```python
 y_train_onehot = utils.to_categorical(y_train,10)
 y_test_onehot = utils.to_categorical(y_test,10)
@@ -45,7 +45,7 @@ plt.imshow(single_image,cmap='gray')
 y_train_onehot[1209]
 ```
 
-### 3. Create a sequential model with appropriate number of neurons in the output layer, activation function and loss function
+#### 3. Create a sequential model with appropriate number of neurons in the output layer, activation function and loss function
 ```python
 model = keras.Sequential()
 model.add(layers.Input(shape=(32,32,3)))
@@ -68,7 +68,7 @@ model.fit(X_train ,y_train_onehot, epochs=3,
           validation_data=(X_test,y_test_onehot))
 ```
 
-### 4. Plot iteration vs accuracy and iteration vs loss for test and training data
+#### 4. Plot iteration vs accuracy and iteration vs loss for test and training data
 ```python
 metrics = pd.DataFrame(model.history.history)
 metrics.head()
@@ -76,7 +76,7 @@ metrics[['accuracy','val_accuracy']].plot()
 metrics[['loss','val_loss']].plot()
 ```
 
-### 5. Training the model to get more than 80% accuracy
+#### 5. Training the model to get more than 80% accuracy
 ```python
 x_test_predictions = np.argmax(model.predict(X_test), axis=1)
 print(confusion_matrix(y_test,x_test_predictions))
