@@ -16,6 +16,9 @@ To develop a classification model for cifar10 data set using convolution neural 
 
 6. Check the accuracy score and make amendments if required.
 
+### Neural Network Model:
+![image](https://github.com/Aashima02/Workshop-2---CNN-Model-for-CIAFAR10/assets/93427086/00d7d420-29c2-48d8-9c51-eec45be33810)
+
 ## PROGRAM:
 
 #### 1. Write a python code to load the CIFAR-10 dataset
